@@ -40,24 +40,28 @@ function cont(dia1, dia2, mes1, mes2, ano1, ano2) {
     return dias;
 }
 
+function calcula(){
+    let dataCont = 0;
 
-let dataCont = 0;
-
-
-let dia1 = 07;
-let mes1 = 04;
-let ano1 = 2018;
-
-let dataDeHoje = new Date();
-
-let dia2 = dataDeHoje.getDate();
-let mes2 = dataDeHoje.getMonth() + 1;
-let ano2 = dataDeHoje.getFullYear();
-
-if ((ano1 > ano2) || (ano1 == ano2 && mes1 > mes2) || (ano1 == ano2 && mes1 == mes2 && dia1 > dia2)) {
-    dataCont = cont(dia2, dia1, mes2, mes1, ano2, ano1);
-} else {
-    dataCont = cont(dia1, dia2, mes1, mes2, ano1, ano2);
+    let dia1 = 07;
+    let mes1 = 04;
+    let ano1 = 2018;
+    
+    let dataDeHoje = new Date();
+    
+    let dia2 = dataDeHoje.getDate();
+    let mes2 = dataDeHoje.getMonth() + 1;
+    let ano2 = dataDeHoje.getFullYear();
+    
+    if ((ano1 > ano2) || (ano1 == ano2 && mes1 > mes2) || (ano1 == ano2 && mes1 == mes2 && dia1 > dia2)) {
+        dataCont = cont(dia2, dia1, mes2, mes1, ano2, ano1);
+    } else {
+        dataCont = cont(dia1, dia2, mes1, mes2, ano1, ano2);
+    }
+    return dataCont;
 }
 
-console.log(dataCont);
+exports.getDataDis = function (){
+    let val = calcula();
+    return val;
+}
