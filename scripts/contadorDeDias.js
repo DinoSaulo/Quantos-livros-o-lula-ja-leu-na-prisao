@@ -61,7 +61,23 @@ function calcula(){
     return dataCont;
 }
 
-exports.getDataDis = function (){
-    let val = calcula();
-    return val;
-}
+//exports.getDataDis = function (){
+//    let val = calcula();
+//    return val;
+//}
+
+
+
+// Lula leu 21 livros em 57 dias
+
+let mediaDeLeituraDoLula = 21 / 57;
+
+let text = "Lula está a "+ calcula() + " dias preso";
+
+
+document.getElementById("content").innerHTML = text;
+
+let text2 = "Lula já leu "+ Math.floor(mediaDeLeituraDoLula * calcula()) + " livros";
+
+
+document.getElementById("content2").innerHTML = text2;
